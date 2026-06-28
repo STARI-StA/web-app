@@ -1,4 +1,4 @@
-The official website of STARI (St Andrews Aerospace Initiative)
+# The official website of the St Andrews aerospace initiative (STARI).
 
 ## Getting Started
 
