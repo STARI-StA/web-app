@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { michroma } from "./ui/fonts";
-import { bungee } from "./ui/fonts";
+import { michroma } from "@/app/ui/fonts";
+import { bungee } from "@/app/ui/fonts";
 
 import "./globals.css";
 import { UstaLogo } from "./ui/usta-logo";
-import { Menu } from "./ui/menu";
+import Menu from "./ui/menu";
 
 export const metadata: Metadata = {
   title: "STARI",
