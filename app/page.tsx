@@ -3,6 +3,9 @@ import { Banner } from "./ui/banner";
 
 export default function Home() {
   return (
-    <Banner/>
+    <>
+      <Banner/>
+      <h1>Hello</h1>
+    </>
   );
 }
