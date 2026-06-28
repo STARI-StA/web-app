@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { michroma } from "./ui/fonts";
+import { bungee } from "./ui/fonts";
+
 import "./globals.css";
-import { Socials } from "./ui/socials";
 import { UstaLogo } from "./ui/usta-logo";
+import { Menu } from "./ui/menu";
 
 export const metadata: Metadata = {
   title: "STARI",
@@ -23,8 +25,8 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col select-none">
         {children}
         
+        <Menu/>
         <UstaLogo/>
-        <Socials/>
       </body>
     </html>
   );
