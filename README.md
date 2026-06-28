@@ -1,6 +1,6 @@
 The official website of the St Andrews aerospace initiative (STARI).
 
-## Getting Started
+## Deploying Locally
 
 First, run the development server:
 
