@@ -5,8 +5,11 @@ import { bungee } from "@/app/ui/fonts";
 
 import "./globals.css";
 import { UstaLogo } from "./ui/usta-logo";
-import Menu from "./ui/menu";
 import Banner from "./ui/banner";
+import { Geist, Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "STARI",
@@ -30,8 +33,6 @@ export default function RootLayout({
             {children}
           </div>
         </div>
-
-        <Menu />
         <UstaLogo/>
       </body>
     </html>
