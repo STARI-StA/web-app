@@ -1,4 +1,4 @@
-import Icon from "@/app/ui/primitive/icon";
+import Icon from "@/app/ui/primitive/base-icon";
 
 interface MenuIconProps {
   src: string,

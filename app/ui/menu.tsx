@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import MenuIcon from "@/app/ui/primitive/menu-icon";
-import Icon from "@/app/ui/primitive/icon";
+import Icon from "@/app/ui/primitive/base-icon";
 import { useState } from "react";
 import clsx from "clsx";
 
