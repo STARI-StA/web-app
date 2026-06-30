@@ -1,11 +1,8 @@
 import Image from "next/image";
-import { Banner } from "./ui/banner";
+import Meridian from "./ui/heros/meridian";
 
 export default function Home() {
   return (
-    <>
-      <Banner/>
-      <h1>Hello</h1>
-    </>
+    <Meridian/>
   );
 }

@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { michroma } from "./ui/fonts";
+import { michroma } from "@/app/ui/fonts";
+import { bungee } from "@/app/ui/fonts";
+
 import "./globals.css";
+import { UstaLogo } from "./ui/usta-logo";
+import Banner from "./ui/banner";
+import { Geist, Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "STARI",
@@ -16,29 +24,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${michroma.className} h-full antialiased`}
+      className={`${michroma.className} h-full antialiased scrollbar-none`}
     >
-      <body className="min-h-full flex flex-col">
-        {children}
-        <Image
-            className="absolute brightness-50 dark:invert right-3 bottom-3"
-            src="/USTA-logo.png"
-            alt="University of St Andrews Logo"
-            width={150}
-            height={40}
-            priority
-        />
-
-        <a target="_blank" href="https://www.instagram.com/stari.rocketry/">
-          <Image
-              className="dark:invert absolute left-6 bottom-6"
-              src="/Instagram_Glyph_Black.png"
-              alt="Instagram Logo"
-              width={40}
-              height={40}
-              priority
-          />
-        </a>
+      <body className="min-h-full select-none overflow-x-hidden">
+        <div className="flex flex-col h-screen w-screen">
+          <Banner />
+          <div className="w-screen h-full">
+            {children}
+          </div>
+        </div>
+        <UstaLogo/>
       </body>
     </html>
   );
