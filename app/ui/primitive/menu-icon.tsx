@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Icon from "@/app/ui/primitive/icon";
 
 interface MenuIconProps {
