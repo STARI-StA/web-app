@@ -24,12 +24,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${michroma.className} h-full antialiased`}
+      className={`${michroma.className} h-full antialiased scrollbar-none`}
     >
-      <body className="min-h-full select-none">
+      <body className="min-h-full select-none overflow-x-hidden">
         <div className="flex flex-col h-screen w-screen">
           <Banner />
-          <div className="w-full h-full">
+          <div className="w-screen h-full">
             {children}
           </div>
         </div>

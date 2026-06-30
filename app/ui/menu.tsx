@@ -4,7 +4,6 @@ import Image from "next/image";
 import MenuIcon from "@/app/ui/primitive/menu-icon";
 import Icon from "@/app/ui/primitive/icon";
 import { useState } from "react";
-import { createContext } from "react";
 import clsx from "clsx";
 
 import { Button } from "@/components/ui/button"
@@ -18,8 +17,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-
-export const MenuContext = createContext(false);
 
 export function TestMenu() {
 	const [isOpen, openMenu] = useState(false);
