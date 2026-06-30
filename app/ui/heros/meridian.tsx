@@ -14,7 +14,7 @@ export default function Meridian() {
           </h1>
         </div>
         <div>
-          <figure className="rotate-[210deg] md:w-xl invisible md:visible">
+          <figure className="rotate-210 md:w-xl invisible md:visible">
             <img src="/branding/rocket.png"></img>
           </figure>
         </div>
