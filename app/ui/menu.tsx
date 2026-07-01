@@ -1,10 +1,6 @@
-'use client'
-
 import Image from "next/image";
 import MenuIcon from "@/app/ui/primitive/menu-icon";
 import Icon from "@/app/ui/primitive/base-icon";
-import { useState } from "react";
-import clsx from "clsx";
 
 import { Button } from "@/components/ui/button"
 import {
@@ -19,16 +15,12 @@ import {
 } from "@/components/ui/sheet"
 
 export function TestMenu() {
-	const [isOpen, openMenu] = useState(false);
 
 	return (
 		<div className="flex flex-wrap gap-2">
 			<Sheet>
 				<SheetTrigger asChild>
-					<span 
-						className={clsx("absolute inline-block transition duration-300", isOpen? "rotate-90": "rotate-0")} 
-						onClick={() => {openMenu(!isOpen)}}
-					>
+					<span className="absolute inline-block transition duration-300">
 						<Icon src="/icons/menu.svg" alt="Menu Icon"/>
 					</span>
 				</SheetTrigger>
@@ -50,7 +42,7 @@ export function TestMenu() {
 					</div>
 					<SheetFooter>
 						<SheetClose asChild>
-							<Button onClick={() => {openMenu(false)}} variant="outline">Close</Button>
+							<Button variant="outline">Close</Button>
 						</SheetClose>
 					</SheetFooter>
 				</SheetContent>
