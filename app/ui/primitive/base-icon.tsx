@@ -15,6 +15,7 @@ export default function Icon({ src, alt, invert = false }: IconProps) {
         alt={alt}
         fill
         sizes="(max-width: 720px) 24px, 40px"
+        priority
       />
     </div>
   );
