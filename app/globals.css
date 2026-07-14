@@ -85,7 +85,7 @@
 }
 
 @theme {
-  --animate-blink: blink 1s infinite steps(1);
+  --animate-blink: blink 1.4s infinite steps(1);
 }
 
 @keyframes blink {
