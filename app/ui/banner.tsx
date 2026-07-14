@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TestMenu } from "@/app/ui/menu";
+import { Menu } from "@/app/ui/menu";
 
 export default function Banner() {
   return (
-    <div className="top-0 w-full p-6 md:p-10 lg:p-12 bg-background">
-      <TestMenu />
+    <div className="top-0 w-full h-auto p-6 md:p-10 lg:p-12 bg-background">
       <span className="mx-auto flex flex-col text-center items-center gap-3">
         <div className="relative w-32 h-5 md:w-48 md:h-7">
           <Image
@@ -17,10 +16,10 @@ export default function Banner() {
           />
         </div>
 
-        <span className="text-subtle">
-          St Andrews Aerospace
+        <span className="text-sm">
+          St Andrews Rocketry
         </span>
-        <div className="w-[50vw] h-[0.5vh] mt-1 bg-foreground mx-auto rounded-md bg-linear-to-r from-background via-foreground to-background"></div>
+        <div className="w-[50vw] h-[0.1vh] mt-1 bg-foreground mx-auto"></div>
       </span>
     </div>
   );

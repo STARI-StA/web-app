@@ -8,6 +8,7 @@ import { UstaLogo } from "./ui/usta-logo";
 import Banner from "./ui/banner";
 import { Geist, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Menu } from "./ui/menu";
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
@@ -32,6 +33,7 @@ export default function RootLayout({
           <div className="w-screen h-full">
             {children}
           </div>
+          <Menu/>
         </div>
         <UstaLogo/>
       </body>
