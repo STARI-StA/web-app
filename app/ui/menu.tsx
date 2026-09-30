@@ -29,21 +29,22 @@ export function Menu() {
 					showCloseButton={false}
 				>
 					<SheetHeader>
-						<SheetTitle className="text-center">
-							Menu
+						<SheetTitle className="flex text-4xl items-center">
+						Menu
 						</SheetTitle>
 					</SheetHeader>
 
 					<Separator/>
 
 					<div className="no-scrollbar overflow-y-auto px-4">
-						<div className="mt-5 flex flex-col gap-5">
+						<div className="mt-5 flex flex-col gap-7">
 							<MenuIcon href="/" name="Home" src="/icons/home.svg" alt="Home Icon" />
 							<MenuIcon href="/projects" name="Projects" src="/icons/rocket.svg" alt="Projects Icon" />
 							<MenuIcon href="/news" name="News" src="/icons/news.svg" alt="News Icon" />
 							<MenuIcon href="/history" name="Launches" src="/icons/launch.svg" alt="History Icon" />
 							<MenuIcon href="/track" name="Tracker" src="/icons/tracker.svg" alt="Tracking Icon" />
 							<MenuIcon href="https://www.instagram.com/stari.rocketry/" name="Instagram" src="/branding/Instagram_Glyph_White.svg" alt="Instagram" newTab />
+							<MenuIcon href="/team" name="Our Team" src="/icons/users.svg" alt="Team"></MenuIcon>
 						</div>
 					</div>
 					<SheetFooter>
