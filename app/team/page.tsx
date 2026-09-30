@@ -8,7 +8,7 @@ import { Users } from "lucide-react";
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-5">
       <div className="prose-h1:mb-0 prose-h4:mt-0 dark:prose-h4:text-gray-400 prose-h4:text-gray-600">
         <Prose font={bungee}>
           <span className="flex flex-row md:gap-5 gap-2 items-baseline">
@@ -29,7 +29,7 @@ export default function Page() {
         >
           <CarouselContent>
             {members.map((member, idx) => 
-              <CarouselItem key={idx} className="min-h-[40vh] md:min-h-[20vh] lg:min-h-[30vh]">
+              <CarouselItem key={idx} className="min-h-[30vh] md:min-h-[20vh] lg:min-h-[30vh]">
                 <Card style={{borderLeftColor: member.color}} className="w-full border-l-5 h-full">
                   <CardHeader>
                     <CardTitle className="text-2xl md:text-3xl">
