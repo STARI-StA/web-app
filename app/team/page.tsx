@@ -29,7 +29,7 @@ export default function Page() {
         >
           <CarouselContent>
             {members.map((member, idx) => 
-              <CarouselItem key={idx} className="min-h-[10vh] lg:min-h-[40vh]">
+              <CarouselItem key={idx} className="min-h-[10vh] lg:min-h-[30vh]">
                 <Card style={{borderLeftColor: member.color}} className="w-full border-l-5 h-full">
                   <CardHeader>
                     <CardTitle className="text-3xl">
