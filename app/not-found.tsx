@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { FileQuestionMarkIcon } from "lucide-react"
 import { CircleQuestionMarkIcon } from "lucide-react"
  
 export default function NotFound() {

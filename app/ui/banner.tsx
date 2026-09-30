@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Menu } from "@/app/ui/menu";
 
 export default function Banner() {
   return (

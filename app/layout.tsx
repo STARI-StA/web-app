@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { michroma } from "@/app/ui/fonts";
-import { bungee } from "@/app/ui/fonts";
+import { inter } from "@/app/ui/fonts";
 
 import "./globals.css";
-import { UstaLogo } from "./ui/usta-logo";
 import Banner from "./ui/banner";
-import { Geist, Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
 import { Menu } from "./ui/menu";
-
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+import Footer from "./ui/footer";
 
 export const metadata: Metadata = {
   title: "STARI",
@@ -25,17 +19,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${michroma.className} h-full antialiased scrollbar-none`}
+      className={`${inter.className} h-full antialiased scrollbar-none`}
     >
       <body className="min-h-full select-none overflow-x-hidden">
-        <div className="flex flex-col h-screen w-screen">
+        <div className="flex flex-col">
           <Banner />
-          <div className="w-screen h-full">
+          <div className="flex flex-col w-screen min-h-screen">
             {children}
-          </div>
+            <Footer/>
+          </div>  
           <Menu/>
         </div>
-        <UstaLogo/>
       </body>
     </html>
   );
