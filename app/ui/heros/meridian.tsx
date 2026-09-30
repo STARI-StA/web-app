@@ -100,33 +100,31 @@ export default function Meridian() {
           transition={{duration: 0.5}}
           viewport={{ once: true }}>
 
-          <div className="flex-3/4">
-            <div className="flex flex-col gap-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex flex-row gap-3">
-                    <RocketIcon/>
-                    Target Altitude
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  700 m
-                </CardContent>
-              </Card>
+          <div className="flex flex-col gap-4">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex flex-row gap-2">
+                  <RocketIcon/>
+                  Target Altitude
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                700 m
+              </CardContent>
+            </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex flex-row gap-2">
-                    <GaugeIcon/>
-                    Max Speed
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  122 m/s
-                </CardContent>
-              </Card>
-              <EarthIcon className="invisible md:visible" size="400"/>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex flex-row gap-2">
+                  <GaugeIcon/>
+                  Max Speed
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                122 m/s
+              </CardContent>
+            </Card>
+            <EarthIcon className="hidden md:block" size="400"/>
           </div>
         </motion.div>
       </div>

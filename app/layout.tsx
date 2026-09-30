@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.className} h-full antialiased scrollbar-none overflow-x-hidden`}
+      className={`${inter.className} antialiased scrollbar-none overflow-x-hidden`}
     >
-      <body className="min-h-full select-none overflow-x-hidden">
+      <body className="select-none overflow-x-hidden">
         <div className="flex flex-col">
           <Banner />
           <div className="flex flex-col w-full min-h-screen">
