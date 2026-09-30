@@ -95,8 +95,8 @@ export default function Meridian() {
         </div>
         <Separator orientation="vertical"/>
         <motion.div
-          initial={{opacity: 0, translateX:100}}
-          whileInView={{opacity: 1, translateX: 0}}
+          initial={{visibility:"hidden", opacity: 0, translateX:100}}
+          whileInView={{visibility:"visible", opacity: 1, translateX: 0}}
           transition={{duration: 0.5}}
           viewport={{ once: true }}>
 
