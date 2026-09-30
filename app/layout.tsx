@@ -21,13 +21,15 @@ export default function RootLayout({
       lang="en"
       className={`${inter.className} antialiased scrollbar-none overflow-x-hidden`}
     >
-      <body className="select-none overflow-x-hidden">
-        <div className="flex flex-col">
+      <body className="select-none overflow-x-hidden min-h-screen">
+        <div className="flex flex-col w-full flex-1 min-h-screen">
           <Banner />
-          <div className="flex flex-col w-full min-h-screen">
+
+          <main className="flex flex-col w-full flex-1">
             {children}
-            <Footer/>
-          </div>  
+          </main>
+
+          <Footer/>
           <Menu/>
         </div>
       </body>
