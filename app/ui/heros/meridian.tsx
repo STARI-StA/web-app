@@ -51,7 +51,7 @@ export default function Meridian() {
       </Prose>
 
       <div className="w-full flex flex-col md:flex-row justify-center gap-10 px-8 lg:px-32 md:py-8">
-        <div className="flex-1">
+        <div className="flex-3/5">
           <motion.div
             initial={{opacity: 0, translateY:100}}
             whileInView={{opacity: 1, translateY:0}}
@@ -93,40 +93,44 @@ export default function Meridian() {
             </Card>
           </motion.div>
         </div>
+
         <Separator orientation="vertical"/>
-        <motion.div
-          initial={{visibility:"hidden", opacity: 0, translateX:100}}
-          whileInView={{visibility:"visible", opacity: 1, translateX: 0}}
-          transition={{duration: 0.5}}
-          viewport={{ once: true }}>
 
-          <div className="flex flex-col gap-4">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex flex-row gap-2">
-                  <RocketIcon/>
-                  Target Altitude
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                700 m
-              </CardContent>
-            </Card>
+        <div className="flex-2/5">
+          <motion.div
+            initial={{visibility:"hidden", opacity: 0, translateX:100}}
+            whileInView={{visibility:"visible", opacity: 1, translateX: 0}}
+            transition={{duration: 0.5}}
+            viewport={{ once: true }}>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex flex-row gap-2">
-                  <GaugeIcon/>
-                  Max Speed
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                122 m/s
-              </CardContent>
-            </Card>
-            <EarthIcon className="hidden md:block" size="400"/>
-          </div>
-        </motion.div>
+            <div className="flex flex-col gap-4 max-w-full md:max-w-[400px]">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex flex-row gap-2">
+                    <RocketIcon/>
+                    Target Altitude
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  700 m
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex flex-row gap-2">
+                    <GaugeIcon/>
+                    Max Speed
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  122 m/s
+                </CardContent>
+              </Card>
+              <EarthIcon className="hidden md:block max-w-[400px] h-auto w-full"/>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

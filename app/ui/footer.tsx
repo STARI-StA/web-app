@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
-    <footer className="relative bottom-0 w-full mt-auto">
+    <footer className="relative w-full mt-auto">
       <Separator/>
       <div className="w-full flex flex-col gap-5 p-5">
         <div className="w-40 flex flex-row gap-10">
