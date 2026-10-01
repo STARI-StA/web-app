@@ -21,6 +21,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.className} antialiased scrollbar-none overflow-x-hidden`}
     >
+      <head>
+        <meta name="description" content="STARI is the St Andrews Rocketry Initiative. We develop advanced aerospace solutions with custom hardware."></meta>
+      </head>
       <body className="select-none overflow-x-hidden min-h-screen">
         <div className="flex flex-col w-full flex-1 min-h-screen">
           <Banner />

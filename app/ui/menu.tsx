@@ -1,4 +1,3 @@
-import Image from "next/image";
 import MenuIcon from "@/app/ui/primitive/menu-icon";
 import Icon from "@/app/ui/primitive/base-icon";
 import { Separator } from "@/components/ui/separator";
@@ -12,6 +11,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { SiInstagram } from "@icons-pack/react-simple-icons";
+import { CrosshairIcon, Heading, HomeIcon, NewspaperIcon, RadarIcon, RocketIcon, Users } from "lucide-react";
+import { bungee } from "./fonts";
 
 export function Menu() {
 
@@ -25,12 +27,14 @@ export function Menu() {
 				</SheetTrigger>
 				<SheetContent
 					side="left"
-					className="data-[side=bottom]:max-h-[50vh] data-[side=top]:max-h-[50vh]"
+					className="data-[side=bottom]:max-h-[50vh] data-[side=top]:max-h-[50vh] gap-0"
 					showCloseButton={false}
 				>
 					<SheetHeader>
-						<SheetTitle className="flex text-4xl items-center">
-						Menu
+						<SheetTitle className={`${bungee.className} prose-p:font-extrabold flex text-4xl items-center justify-baseline font-light`}>
+							<p>
+								Menu
+							</p>
 						</SheetTitle>
 					</SheetHeader>
 
@@ -38,13 +42,33 @@ export function Menu() {
 
 					<div className="no-scrollbar overflow-y-auto px-4">
 						<div className="mt-5 flex flex-col gap-7">
-							<MenuIcon href="/" name="Home" src="/icons/home.svg" alt="Home Icon" />
-							<MenuIcon href="/projects" name="Projects" src="/icons/rocket.svg" alt="Projects Icon" />
-							<MenuIcon href="/news" name="News" src="/icons/news.svg" alt="News Icon" />
-							<MenuIcon href="/history" name="Launches" src="/icons/launch.svg" alt="History Icon" />
-							<MenuIcon href="/track" name="Tracker" src="/icons/tracker.svg" alt="Tracking Icon" />
-							<MenuIcon href="https://www.instagram.com/stari.rocketry/" name="Instagram" src="/branding/Instagram_Glyph_White.svg" alt="Instagram" newTab />
-							<MenuIcon href="/team" name="Our Team" src="/icons/users.svg" alt="Team"></MenuIcon>
+							<MenuIcon href="/" name="Home">
+								<HomeIcon/>
+							</MenuIcon>
+
+							<MenuIcon href="/viewer" name="3D Viewer">
+								<RocketIcon/>
+							</MenuIcon>
+
+							<MenuIcon href="/news" name="News">
+								<NewspaperIcon/>
+							</MenuIcon>
+
+							<MenuIcon href="/launches" name="Launches">
+								<CrosshairIcon/>
+							</MenuIcon>
+
+							<MenuIcon href="/track" name="Tracker">
+								<RadarIcon/>
+							</MenuIcon>
+
+							<MenuIcon href="https://www.instagram.com/stari.rocketry/" name="Instagram" newTab>
+								<SiInstagram/>
+							</MenuIcon>
+
+							<MenuIcon href="/team" name="Our Team">
+								<Users/>
+							</MenuIcon>
 						</div>
 					</div>
 					<SheetFooter>
