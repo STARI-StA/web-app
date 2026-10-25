@@ -25,10 +25,10 @@ export default function RootLayout({
         <meta name="description" content="STARI is the St Andrews Rocketry Initiative. We develop advanced aerospace solutions with custom hardware."></meta>
       </head>
       <body className="select-none overflow-x-hidden min-h-screen">
-        <div className="flex flex-col w-full flex-1 min-h-screen">
+        <div className="flex flex-col w-full min-h-screen">
           <Banner />
 
-          <main className="flex flex-col w-full flex-1">
+          <main>
             {children}
           </main>
 

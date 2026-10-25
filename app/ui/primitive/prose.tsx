@@ -4,12 +4,21 @@ import { NextFont } from "next/dist/compiled/@next/font";
 
 interface ProseProps {
   children: React.ReactNode,
-  font: NextFont
+  font: NextFont,
+  className?: string
 }
 
-export default function Prose( {children, font}: ProseProps) {
+export default function Prose( {children, font, className}: ProseProps) {
     return (
-      <div className={`${font.className} max-w-8xl h-full antialiased text-foreground prose-headings:text-foreground prose prose-headings:font-bold prose-p:font-semibold prose-sm md:prose-2xl relative left-0 top-0 py-8 px-8 lg:px-24 w-screen`}>
+      <div className={`${font.className} 
+        max-w-8xl h-full w-full
+        text-center md:text-left
+        antialiased text-foreground 
+        prose prose-md md:prose-2xl
+        prose-headings:text-foreground prose-headings:font-bold
+        prose-p:font-semibold
+        prose-h2:text-xl md:prose-h2:text-4xl
+        relative left-0 top-0 px-0 ${className || ''}`}>
         {children}
       </div>
     );

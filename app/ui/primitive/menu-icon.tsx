@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import React from "react";
+import LinkButton from "./link-button";
 
 interface MenuIconProps {
   children?: React.ReactNode,
@@ -11,11 +11,6 @@ interface MenuIconProps {
 export default function MenuIcon({ children, name, href, newTab = false }: MenuIconProps) {
 
   return (
-    <a href={href} target={newTab ? "_blank" : "_self"}>
-      <Button variant={"ghost"}>
-        {children}
-        {name}
-      </Button>
-    </a>
+      <LinkButton variant={"ghost"} href={href} newTab={newTab} name={name} children={children}/>
   );
 }

@@ -3,7 +3,6 @@
 import { bungee } from "../fonts";
 import { motion } from "motion/react";
 import { ChevronDown, CopyrightIcon, EarthIcon, GaugeIcon, HandCoinsIcon, RocketIcon, UsersIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardAction,
@@ -15,42 +14,49 @@ import {
 } from "@/components/ui/card"
 import { RotatingText, RotatingTextContainer } from "@/components/animate-ui/primitives/texts/rotating";
 import { Separator } from "@/components/ui/separator";
-import RocketSkeleton from "./rocket-skeleton";
 import Prose from "../primitive/prose";
+import LinkButton from "../primitive/link-button";
+import PageContent from "../structural/page-content";
+import HeroDiv from "../structural/hero-div";
+import { sponsors } from "@/lib/static/sponsors";
+import clsx from "clsx";
 
 
 export default function Meridian() {
   return (
-    <div className="flex flex-col gap-10 justify-center py-8">
+    <PageContent>
       <ChevronDown size="30" className="absolute mx-auto invisible lg:visible bottom-5 left-1/2 translate-x-[-50%]"></ChevronDown>
-      <Prose font={bungee}>
-        <div className="relative h-full">
-          <div className="flex flex-col lg:flex-row lg:gap-10">
-            <div>
-              <h1>
-                Introducing<br/>Meridian <span className="animate-blink">|</span>
-              </h1>
-            </div>
-            <div className="flex justify-center items-center p-10 lg:p-0">
-              <figure className="rotate-330 lg:rotate-210 w-sm lg:w-xl">
-                <img src="/branding/rocket.png"></img>
-              </figure>
-            </div>
-          </div>
-          <h4 className="relative">
-            St Andrews premier rocket development project
-            <br/>
-            <RotatingTextContainer duration={4000} text={["advanced telemetry tracking", "custom avionics", "a g-class solid rocket motor"]}>
-              <span className="flex flex-row gap-2">
-                Featuring
-                <span className="text-red-600"><RotatingText/></span>
-              </span>
-            </RotatingTextContainer>
-          </h4>
-        </div>
-      </Prose>
 
-      <div className="w-full flex flex-col md:flex-row justify-center gap-10 px-8 lg:px-32 md:py-8">
+      <HeroDiv>
+        <Prose font={bungee} className="flex flex-1">
+          <div className="relative flex flex-col flex-1 pb-[1vh] md:pb-0">
+            <div className="flex flex-col lg:flex-row lg:gap-10">
+              <div>
+                <h1>
+                  Introducing<br/>Meridian <span className="animate-blink">|</span>
+                </h1>
+              </div>
+              <div className="flex px-[clamp(1rem,_calc(8rem_-_12vh),_10rem)] md:px-0 justify-center items-center">
+                <figure className="rotate-271 md:rotate-210 translate-y-[10vh] md:translate-y-0">
+                  <img className="h-auto" draggable={false} src="/branding/rocket.png"></img>
+                </figure>
+              </div>
+            </div>
+            <h4 className="mt-auto relative">
+              St Andrews premier rocket development project
+              <br/>
+              <RotatingTextContainer duration={4000} text={["advanced telemetry tracking", "custom avionics", "a g-class solid rocket motor"]}>
+                <span className="flex flex-col md:flex-row gap-2">
+                  Featuring
+                  <span className="text-red-600"><RotatingText/></span>
+                </span>
+              </RotatingTextContainer>
+            </h4>
+          </div>
+        </Prose>
+      </HeroDiv>
+
+      <div className="flex flex-col md:flex-row justify-center gap-10 md:py-8">
         <div className="flex-3/5">
           <motion.div
             initial={{opacity: 0, translateY:100}}
@@ -77,18 +83,15 @@ export default function Meridian() {
 
               </CardContent>
               <CardFooter className="gap-2">
-                <a href="/team">
-                  <Button className="w-full">
-                    Meet the team
-                    <UsersIcon/>
-                  </Button>
-                </a>
-                <a href="/sponsor">
-                  <Button className="w-full">
-                    Sponsor Us
-                    <HandCoinsIcon/>
-                    </Button>
-                </a>
+                <LinkButton href="/team">
+                  Meet the team
+                  <UsersIcon/>
+                </LinkButton>
+
+                <LinkButton href="/contact">
+                  Sponsor Us
+                  <HandCoinsIcon/>
+                </LinkButton>
               </CardFooter>
             </Card>
           </motion.div>
@@ -103,7 +106,7 @@ export default function Meridian() {
             transition={{duration: 0.5}}
             viewport={{ once: true }}>
 
-            <div className="flex flex-col gap-4 max-w-full md:max-w-[400px]">
+            <div className="flex flex-col gap-4 max-w-full md:max-w-100">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex flex-row gap-2">
@@ -112,7 +115,7 @@ export default function Meridian() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  700 m
+                  2000 ft
                 </CardContent>
               </Card>
 
@@ -127,11 +130,32 @@ export default function Meridian() {
                   122 m/s
                 </CardContent>
               </Card>
-              <EarthIcon className="hidden md:block max-w-[400px] h-auto w-full"/>
+              <EarthIcon className="hidden md:block max-w-100 h-auto w-full"/>
             </div>
           </motion.div>
         </div>
       </div>
-    </div>
+      
+      <Separator/>
+      <Prose font={bungee}>
+        <h2 className="md:mb-0">
+          Proudly Sponsored By:
+        </h2>
+        <motion.div            
+          initial={{opacity: 0, translateX:100}}
+            whileInView={{opacity: 1, translateX:0}}
+            transition={{duration: 0.5}}
+            viewport={{ once: true}}
+            className="flex flex-col p-10 md:p-0 md:flex-row md:gap-3 w-full items-center justify-center">
+          {
+            sponsors.map((sponsor, idx) => 
+              <a key={idx} href={sponsor.url} target="_" className="w-full h-auto mt-0 object-contain flex-1 flex min-w-0">
+                <motion.img draggable={false} whileHover={{ translateY: -3}} src={sponsor.logoSrc}></motion.img>
+              </a>
+            )
+          }
+        </motion.div>
+      </Prose>
+    </PageContent>
   );
 }
