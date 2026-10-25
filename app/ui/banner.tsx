@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <div className="top-0 w-full h-auto p-6 md:p-10 lg:p-12 bg-background">
+    <div className="w-full h-32 py-20 flex flex-col justify-center items-center bg-background">
       <span className="mx-auto flex flex-col text-center items-center gap-3">
         <div className="relative w-32 h-5 md:w-48 md:h-7">
           <Image

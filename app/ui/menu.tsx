@@ -12,7 +12,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { SiInstagram } from "@icons-pack/react-simple-icons";
-import { CrosshairIcon, Heading, HomeIcon, NewspaperIcon, RadarIcon, RocketIcon, Users } from "lucide-react";
+import { CrosshairIcon, HomeIcon, MailIcon, NewspaperIcon, RadarIcon, RocketIcon, Users } from "lucide-react";
 import { bungee } from "./fonts";
 
 export function Menu() {
@@ -68,6 +68,10 @@ export function Menu() {
 
 							<MenuIcon href="/team" name="Our Team">
 								<Users/>
+							</MenuIcon>
+
+							<MenuIcon href="/contact" name="Contact Us">
+								<MailIcon/>
 							</MenuIcon>
 						</div>
 					</div>
