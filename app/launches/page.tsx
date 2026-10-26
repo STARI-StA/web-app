@@ -17,7 +17,7 @@ export const dynamic = 'force-dynamic'
  
 export default async function Page() {
 
-  const sql = neon(process.env.POSTGRES_URL!)
+  const sql = neon(process.env.STORAGE_POSTGRES_URL!)
   const launches = await sql`SELECT * FROM launches ORDER BY date ASC` as Launch[];
 
   return (
