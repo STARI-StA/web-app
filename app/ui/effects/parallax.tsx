@@ -4,22 +4,32 @@ import React, { useRef } from "react";
 
 interface ParallaxProps {
   children: React.ReactNode
-  className?: string,
+  range: number,
+  angle: number,
+  cutoff?: string,
+  className?: string
 };
 
 
-export default function Parallax( {children, className} : ParallaxProps ) {
+export default function Parallax( {children, range, angle, cutoff, className} : ParallaxProps ) {
   const ref = useRef(null);
+  const offset = [`start ${cutoff ?? "30%"}`, "end start"] as [any, any];
+
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 30%", "end start"]
+    offset: offset
   });
 
-  const parallaxProgress = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const xRange = Math.cos(angle)*range;
+  const yRange = Math.sin(angle)*range;
+
+  const parallaxYProgress = useTransform(scrollYProgress, [0, 1], [0, xRange])
+  const parallaxXProgress = useTransform(scrollYProgress, [0, 1], [0, yRange])
 
   return (
-    <motion.div ref={ref} className={`flex-1 ${className}`} style={{
-      translateY: parallaxProgress
+    <motion.div ref={ref} className={`${className}`} style={{
+      translateY: parallaxYProgress,
+      translateX: parallaxXProgress
     }}>
       {children}
     </motion.div>
