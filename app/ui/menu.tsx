@@ -50,10 +50,6 @@ export function Menu() {
 								<RocketIcon/>
 							</MenuIcon>
 
-							<MenuIcon href="/news" name="News">
-								<NewspaperIcon/>
-							</MenuIcon>
-
 							<MenuIcon href="/launches" name="Launches">
 								<CrosshairIcon/>
 							</MenuIcon>
