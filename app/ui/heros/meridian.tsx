@@ -20,6 +20,7 @@ import PageContent from "../structural/page-content";
 import HeroDiv from "../structural/hero-div";
 import { sponsors } from "@/lib/static/sponsors";
 import clsx from "clsx";
+import Parallax from "../effects/parallax";
 
 
 export default function Meridian() {
@@ -31,15 +32,17 @@ export default function Meridian() {
         <Prose font={bungee} className="flex flex-1">
           <div className="relative flex flex-col flex-1 pb-[10vh] md:pb-0">
             <div className="flex flex-col lg:flex-row lg:gap-10">
-              <div>
+              <div className="relative z-10">
                 <h1>
                   Introducing<br/>Meridian <span className="animate-blink">|</span>
                 </h1>
               </div>
               <div className="flex px-[clamp(1rem,calc(8rem-12vh),10rem)] md:px-0 justify-center items-center">
-                <figure className="rotate-271 md:rotate-210 translate-y-[10vh] md:translate-y-0">
-                  <img className="h-auto" draggable={false} src="/branding/rocket.png"></img>
-                </figure>
+                <Parallax>
+                  <figure className="rotate-271 md:rotate-210 translate-y-[10vh] md:translate-y-0">
+                    <img className="h-auto" draggable={false} src="/branding/rocket.png"></img>
+                  </figure>
+                </Parallax>
               </div>
             </div>
             <h4 className="mt-auto relative">
