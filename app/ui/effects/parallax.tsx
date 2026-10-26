@@ -1,4 +1,4 @@
-import { useScroll, useTransform } from "motion/react";
+import { circIn, circInOut, circOut, cubicBezier, useScroll, useTransform } from "motion/react";
 import { motion } from "motion/react";
 import React, { useRef } from "react";
 
@@ -25,11 +25,13 @@ export default function Parallax( {children, range, angle, cutoff, className} : 
 
   const parallaxYProgress = useTransform(scrollYProgress, [0, 1], [0, xRange])
   const parallaxXProgress = useTransform(scrollYProgress, [0, 1], [0, yRange])
+  const opacityProgress = useTransform(scrollYProgress, [0,1], [1,0], {ease: circInOut})
 
   return (
     <motion.div ref={ref} className={`${className}`} style={{
       translateY: parallaxYProgress,
-      translateX: parallaxXProgress
+      translateX: parallaxXProgress,
+      opacity: opacityProgress
     }}>
       {children}
     </motion.div>

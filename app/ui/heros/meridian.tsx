@@ -21,6 +21,7 @@ import HeroDiv from "../structural/hero-div";
 import { sponsors } from "@/lib/static/sponsors";
 import clsx from "clsx";
 import Parallax from "../effects/parallax";
+import Stagger from "../effects/stagger";
 
 
 export default function Meridian() {
@@ -112,14 +113,9 @@ export default function Meridian() {
 
         <Separator orientation="vertical"/>
 
-        <div className="flex-2/5">
-          <motion.div
-            initial={{visibility:"hidden", opacity: 0, translateX:100}}
-            whileInView={{visibility:"visible", opacity: 1, translateX: 0}}
-            transition={{duration: 0.5}}
-            viewport={{ once: true }}>
-
-            <div className="flex flex-col gap-4 max-w-full md:max-w-100">
+        <div className="flex flex-col gap-4 max-w-full md:max-w-100 flex-2/5">
+          <Stagger className="flex flex-col gap-4" horizontal delay={0.3}>
+            <motion.div>
               <Card>
                 <CardHeader>
                   <CardTitle className="flex flex-row gap-2">
@@ -131,7 +127,9 @@ export default function Meridian() {
                   2000 ft
                 </CardContent>
               </Card>
+            </motion.div>
 
+            <motion.div>
               <Card>
                 <CardHeader>
                   <CardTitle className="flex flex-row gap-2">
@@ -143,9 +141,9 @@ export default function Meridian() {
                   122 m/s
                 </CardContent>
               </Card>
-              <EarthIcon className="hidden md:block max-w-100 h-auto w-full"/>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Stagger>
+          <EarthIcon className="hidden md:block max-w-100 h-auto w-full"/>
         </div>
       </div>
       
@@ -154,20 +152,15 @@ export default function Meridian() {
         <h2 className="md:mb-0">
           Proudly Sponsored By:
         </h2>
-        <motion.div            
-          initial={{opacity: 0, translateX:100}}
-            whileInView={{opacity: 1, translateX:0}}
-            transition={{duration: 0.5}}
-            viewport={{ once: true}}
-            className="flex flex-col pb-10 px-10 md:p-0 md:flex-row gap-0 md:gap-3 w-full items-center justify-center">
+        <Stagger delay={0.3} className="flex flex-col pb-10 px-10 md:p-0 md:flex-row gap-0 md:gap-3 w-full items-center justify-center"> 
           {
             sponsors.map((sponsor, idx) => 
-              <a key={idx} href={sponsor.url} target="_" className="w-full mt-0 object-contain min-w-0">
+              <motion.a key={idx} href={sponsor.url} target="_" className="w-full mt-0 object-contain min-w-0">
                 <motion.img draggable={false} whileHover={{ translateY: -3}} src={sponsor.logoSrc}></motion.img>
-              </a>
+              </motion.a>
             )
           }
-        </motion.div>
+        </Stagger>
       </Prose>
     </PageContent>
   );
