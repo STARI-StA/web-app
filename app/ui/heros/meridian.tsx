@@ -2,10 +2,9 @@
 
 import { bungee } from "../fonts";
 import { motion } from "motion/react";
-import { ChevronDown, CopyrightIcon, EarthIcon, GaugeIcon, HandCoinsIcon, RocketIcon, UsersIcon } from "lucide-react";
+import { ChevronDown, EarthIcon, GaugeIcon, HandCoinsIcon, RocketIcon, UsersIcon } from "lucide-react";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -84,14 +83,14 @@ export default function Meridian() {
                 className="relative z-20 w-full object-cover"
               />
               <CardHeader>
-                <CardTitle>About STARI</CardTitle>
-                <CardDescription>Founded 2025, St Andrews, Scotland</CardDescription>
+                <CardTitle>About Meridian</CardTitle>
+                <CardDescription>STARI | Founded 2025, St Andrews, Scotland</CardDescription>
               </CardHeader>
               <Separator/>
               <CardContent className="text-left">
-                STARI (the St Andrews Rocketry Initiative) is a student-led organization created with the goal of producing high-performance aerospace technology.
+                Meridian is the flagship project of STARI (the St Andrews Rocketry Initiative). STARI is a student-led organization created with the goal of producing high-performance aerospace technology.
                 <br/><br/>
-                We are currently working towards launching our first major project, the Meridian I rocket. This will function as a preliminary testing vehicle and the gateway to more advanced future developments. We soon hope to compete in national rocketry competitions.
+                Meridian will function as a preliminary testing vehicle and the gateway to more advanced future developments. We soon hope to compete in national rocketry competitions.
                 <br/><br/>
                 STARI is funded by the generosity of sponsors. If you or your organisation would like to support us, please get in touch!
 
