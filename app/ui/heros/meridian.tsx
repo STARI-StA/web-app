@@ -38,23 +38,33 @@ export default function Meridian() {
                 </h1>
               </div>
               <div className="flex px-[clamp(1rem,calc(8rem-12vh),10rem)] md:px-0 justify-center items-center">
-                <Parallax>
+
+                <Parallax angle={271} range={-150} cutoff="30%" className="flex-1 hidden md:block">
                   <figure className="rotate-271 md:rotate-210 translate-y-[10vh] md:translate-y-0">
                     <img className="h-auto" draggable={false} src="/branding/rocket.png"></img>
                   </figure>
                 </Parallax>
+
+                <Parallax angle={0} range={-150} cutoff="30%" className="flex-1 block md:hidden">
+                  <figure className="rotate-271 md:rotate-210 translate-y-[10vh] md:translate-y-0">
+                    <img className="h-auto" draggable={false} src="/branding/rocket.png"></img>
+                  </figure>
+                </Parallax>
+
               </div>
             </div>
-            <h4 className="mt-auto relative">
-              St Andrews premier rocket development project
-              <br/>
-              <RotatingTextContainer duration={4000} text={["advanced telemetry tracking", "custom avionics", "a g-class solid rocket motor"]}>
-                <span className="flex flex-col md:flex-row gap-2">
-                  Featuring
-                  <span className="text-red-600"><RotatingText/></span>
-                </span>
-              </RotatingTextContainer>
-            </h4>
+            <Parallax angle={0} className="mt-auto relative" cutoff="100%" range={-200}>
+              <h4 className="mt-auto relative">
+                St Andrews premier rocket development project
+                <br/>
+                <RotatingTextContainer duration={4000} text={["advanced telemetry tracking", "custom avionics", "a g-class solid rocket motor"]}>
+                  <span className="flex flex-col md:flex-row gap-2">
+                    Featuring
+                    <span className="text-red-600"><RotatingText/></span>
+                  </span>
+                </RotatingTextContainer>
+              </h4>
+            </Parallax>
           </div>
         </Prose>
       </HeroDiv>
@@ -149,10 +159,10 @@ export default function Meridian() {
             whileInView={{opacity: 1, translateX:0}}
             transition={{duration: 0.5}}
             viewport={{ once: true}}
-            className="flex flex-col p-10 md:p-0 md:flex-row md:gap-3 w-full items-center justify-center">
+            className="flex flex-col pb-10 px-10 md:p-0 md:flex-row gap-0 md:gap-3 w-full items-center justify-center">
           {
             sponsors.map((sponsor, idx) => 
-              <a key={idx} href={sponsor.url} target="_" className="w-full h-auto mt-0 object-contain flex-1 flex min-w-0">
+              <a key={idx} href={sponsor.url} target="_" className="w-full mt-0 object-contain min-w-0">
                 <motion.img draggable={false} whileHover={{ translateY: -3}} src={sponsor.logoSrc}></motion.img>
               </a>
             )
