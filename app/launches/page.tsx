@@ -12,8 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
-export const dynamic = 'force-dynamic'
+import { RocketIcon } from "lucide-react";
  
 export default async function Page() {
 
@@ -26,24 +25,24 @@ export default async function Page() {
         <h1 className="mt-10">Upcoming Launches</h1>
       </Prose>
       <Separator/>
-        <div className="flex justify-center items-center overflow-y-scroll scrollbar-none">
-          {
-            launches.map((launch, idx) =>
-              <Card key={idx} className="relative pt-0 md:w-5xl max-w-full p-5 border-l-5 border-l-chart-4">
-                <CardHeader>
-                  <CardTitle className="text-3xl md:text-4xl">
-                    {new Date(launch.date).toLocaleDateString('en-US', {month: 'long', day: 'numeric',timeZone: 'UTC', })}
-                  </CardTitle>
-                  <CardDescription>{launch.location} | {launch.time}</CardDescription>
-                </CardHeader>
-                <Separator/>
-                <CardContent className="text-left">
-                  {launch.description}
-                </CardContent>
-              </Card>
-            )
-          }
-        </div>
+      <div className="flex justify-center items-start overflow-y-scroll scrollbar-none pb-10">
+        {
+          launches.map((launch, idx) =>
+            <Card key={idx} className="relative pt-0 md:w-5xl max-w-full p-5 border-l-5 border-l-chart-4">
+              <CardHeader>
+                <CardTitle className="text-3xl md:text-4xl">
+                  {new Date(launch.date).toLocaleDateString('en-US', {month: 'long', day: 'numeric',timeZone: 'UTC', })}
+                </CardTitle>
+                <CardDescription>{launch.location} | {launch.time}</CardDescription>
+              </CardHeader>
+              <Separator/>
+              <CardContent className="text-left">
+                {launch.description}
+              </CardContent>
+            </Card>
+          )
+        }
+      </div>
     </PageContent>
   );
 }
