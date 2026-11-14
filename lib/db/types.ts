@@ -4,6 +4,8 @@ interface Launch {
   date: string,
   time: string,
   location: string,
+  delayed: boolean,
+  delayCause: string,
   model?: string,
   description?: string
 }
