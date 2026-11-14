@@ -14,8 +14,7 @@ export default function Loading() {
       </Prose>
       <Separator/>
       <div className="flex flex-col gap-5 justify-start items-center overflow-y-scroll scrollbar-none">
-        <Skeleton className="w-xs md:w-5xl h-30 md:h-20 rounded-xl"/>
-        <Skeleton className="w-xs md:w-5xl h-30 md:h-20 rounded-xl"/>
+        <Skeleton className="w-xs md:w-5xl h-20 md:h-50 rounded-xl"/>
       </div>
     </PageContent>
   );
